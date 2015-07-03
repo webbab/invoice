@@ -55,16 +55,16 @@
                 <table class="table-reduce-padding">
                     <tbody>
                         <tr>
-                            <td><p class="h4">Invoice #: </p></td>
+                            <td><p class="h4">Faktura #: </p></td>
                             <td><p class="h5"><strong><span editable-text="invoice.number">{{invoice.number || '####'}}</span></strong></p></td>
                         </tr>
                         <tr>
-                            <td><p class="h5">Date: </p></td>
-                            <td><p class="h5"><strong><span editable-text="invoice.send_date">{{invoice.send_date || 'January 01, 2014'}}</span></strong></p></td>
+                            <td><p class="h5">Datum: </p></td>
+                            <td><p class="h5"><strong><span editable-text="invoice.send_date">{{invoice.send_date || '2015-01-01'}}</span></strong></p></td>
                         </tr>
                         <tr>
-                            <td><p class="h5">Due Date: </p></td>
-                            <td><p class="h5"><strong><span editable-text="invoice.due_date">{{invoice.due_date || 'January 15, 2014'}}</span></strong></p></td>
+                            <td><p class="h5">Förfallodatum: </p></td>
+                            <td><p class="h5"><strong><span editable-text="invoice.due_date">{{invoice.due_date || '2015-01-01'}}</span></strong></p></td>
                         </tr>
                     </tbody>
                 </table>
@@ -75,11 +75,11 @@
                 <table class="table table-condensed table-striped">
                     <thead>
                         <tr>
-                            <th>Item</th>
+                            <th>Artikel</th>
                             <th>Task</th>
-                            <th>Hours</th>
+                            <th>Timmar</th>
                             <th>Rate</th>
-                            <th>Amount</th>
+                            <th>Summa</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -88,7 +88,7 @@
                             <td>
                                 <dl>
                                     <dt><span editable-text="invoice.line_items[$index].title">{{item.title || 'Task Title'}}</span></dt>
-                                    <dd><span editable-text="invoice.line_items[$index].desc">{{item.desc || "Description goes here"}}</span></dd>
+                                    <dd><span editable-text="invoice.line_items[$index].desc">{{item.desc || "Beskrivning"}}</span></dd>
                                 </dl>
                             </td>
                             <td><span editable-text="invoice.line_items[$index].hours" e-style="width: 50px">{{item.hours || '0'}}</span></td>
@@ -111,7 +111,7 @@
                     <tfoot class="subtotal">
                         <tr>
                             <td colspan=3></td>
-                            <td><p class="h5">Subtotal: </p></td>
+                            <td><p class="h5">Delsumma: </p></td>
                             <td><p class="h5"><strong>${{ getSubTotal() }}</strong></p></td>
                         </tr>
                         <tr>
@@ -121,7 +121,7 @@
                         </tr>
                         <tr>
                             <td colspan=3></td>
-                            <td><p class="h5">Total: </p></td>
+                            <td><p class="h5">Totalt: </p></td>
                             <td><p class="h5"><strong>${{ getSubTotal() - invoice.client_deposit }}</strong></p></td>
                         </tr>
                     </tfoot>
@@ -129,7 +129,7 @@
             </div>
         </div>
         <div class="col-xs-6">
-            <p>Your business is greatly appreciated!</p>
+            <p>Tack för gott samarbete!</p>
         </div>
         <div class="col-xs-6">
             <p class="h3 text-right">
